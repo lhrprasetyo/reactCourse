@@ -21,31 +21,38 @@ const books = [
 
 
 function BookList() {
-  const someValue = 'Image Clicked !';
-  const imageClick = () => {
-    console.log(someValue);
-  }
+  const getBook= (id) => {
+    const book = books.find((book) => book.id === id)
+    console.log(book)
+  } 
+
   return (
     <section className="booklist">
       {books.map((book)=>{
-        return <Book {...book} key = {book.id} imageClick={imageClick}/>;
+        return <Book {...book} key = {book.id} getBook = {getBook} />;
       })};
     </section>
   );
 };
 
 const Book = (props) => {
-  const {img , title , author, imageClick} = props;
+  const {img , title , author,getBook,id} = props;
+  // const getSingleBook = () => {
+  //   getBook(id);
+  // }
   const showTitle = () => {
     console.log(title);
   }
   return (
+    <>
     <article className="book">
-      <img src={img} onClick={imageClick} alt={title} />
+      <img src={img}  alt={title} />
       <h2>{title}</h2>
-      <button onClick={showTitle}>Show Title</button>
+      {/* <button onClick={getSingleBook}>click me</button> */}
+      <button onClick={() => {getBook(id)}}>click me</button>
       <h4>{author}</h4>
     </article>
+    </>
   );
 };
 
