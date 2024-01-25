@@ -9,6 +9,11 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: #f1f5f8;
 }
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: capitalize;
+}
 
 .booklist {
   width: 90vw;
@@ -27,6 +32,7 @@ body {
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 .book img {
   width: 100%;
@@ -41,4 +47,15 @@ body {
   color: #617d98;
   /* will work */
   letter-spacing: 2px;
+}
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: #c35600;
+  color: #fff;
 }
